@@ -1,9 +1,10 @@
 package notasalumno;
 /* Programa notas alumno
- * Version 1.2*/
+ * Version 1.3*/
 import java.util.Scanner;
 public class NotasAlumno {
 	Scanner stdin = new Scanner (System.in);
+    private int notaTrabajo;
 	class Alumno{
 		int alumno;
 		int examen1;
@@ -14,6 +15,7 @@ public class NotasAlumno {
 		int respuestas;
 		int aciertos;
 		int fallos;
+                  int notaTrabajo; 
 	}
         public void examenes(){
      
@@ -32,7 +34,7 @@ public class NotasAlumno {
         }
         
 	public void examenesClasicos() { /* Aqui introduces las notas de los examenes clasicos*/
-      int notaExamenesClasicos=0;
+          int notaExamenesClasicos=0;
 	  for(int alumno = 1;alumno<=10;alumno++){ 
 		  if (notaExamenesClasicos<=10) {
 			  System.out.println("Tu nota es de " + notaExamenesClasicos);
@@ -46,8 +48,22 @@ public class NotasAlumno {
 		int notaExamenesTest=0;
 		
 	}
+        public void presentarTrabajos(){/*Para saber si has entregado todos los trabajos */
+            int trabajos = 0;
+            System.out.println("Introduce tus trabajos entregados: ");
+                     trabajos = stdin.nextInt();
+              if (!(trabajos>=3)){
+                  System.out.println("Lo has entregado todo");
+                  notaTrabajo=trabajos/3;
+                  
+              } else {
+                  System.out.println("Has suspendido");
+                  notaTrabajo = 3;
+              }
+      }
         public static void main(String[] args) {
         // TODO code application logic here
     }
 
 }
+
