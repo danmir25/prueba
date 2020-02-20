@@ -1,23 +1,15 @@
 package notasalumno;
 /* Programa notas alumno
- * Version 1.3*/
+ * Version 1.4.2*/
 import java.util.Scanner;
 public class NotasAlumno {
 	Scanner stdin = new Scanner (System.in);
-    private int notaTrabajo;
+ 
 	class Alumno{
 		int alumno;
-		int examen1;
-		int examen2;
-		int examen3;
-		int examen4;
-		int examen5;
-		int respuestas;
-		int aciertos;
-		int fallos;
-                  int notaTrabajo; 
-	}
-        public void examenes(){
+		int notaFinal=0;
+	}    
+        public void examenes(int notaFinal){ //Cada porcentaje de cada examen
      
             System.out.println("Inserta la nota del primer examen: ");
                     int examen1 =stdin.nextInt();
@@ -29,41 +21,66 @@ public class NotasAlumno {
                     int examen4 =stdin.nextInt();
              System.out.println("Inserta la nota del quinto examen: ");
                     int examen5 =stdin.nextInt();
-             int notaFinal = (int) (examen1*0.1 + examen2*0.2 + examen3*0.2 + examen4*0.25 + examen5*025);
+             notaFinal = (int) (examen1*0.1 + examen2*0.2 + examen3*0.2 + examen4*0.25 + examen5*025);
              System.out.println(notaFinal);
         }
         
-	public void examenesClasicos() { /* Aqui introduces las notas de los examenes clasicos*/
+        
+	public void calcularExamenesClasicos() { // Aqui introduces las notas de los examenes clasicos
           int notaExamenesClasicos=0;
-	  for(int alumno = 1;alumno<=10;alumno++){ 
-		  if (notaExamenesClasicos<=10) {
-			  System.out.println("Tu nota es de " + notaExamenesClasicos);
-		  }else {
-			  System.out.println("Nota no valida");
-			  return;
-		}
-	  }
+          	System.out.println("Introduce tu nota: ");
+          		notaExamenesClasicos=stdin.nextInt();
+		  	if (notaExamenesClasicos<=10) {
+		  		System.out.println("Tu nota es de " + notaExamenesClasicos);
+		  	}else {
+		  		System.out.println("Nota no valida");
+		  		return;
+		  	}
+	  
     }
-	public void examenesTest(){
-		int notaExamenesTest=0;
-		
+	
+	
+	public void calcularExamenesTest(){ // Aqui se calcula las notas de los examenes test.
+		int notaExamenesTest=0, aciertos=0, fallos=0, puntosPerdidos=0;
+			System.out.println("Insterta tus aciertos: ");
+				aciertos=stdin.nextInt();
+			System.out.println("Inserta tus fallos: ");
+				fallos=stdin.nextInt();
+			if(fallos > 0) {
+				puntosPerdidos = fallos/3;
+				System.out.println("Has tenido fallos. Pierdes " + puntosPerdidos);
+			}else{
+				System.out.println("No has tenido fallos");
+			}
+				System.out.println();
+				notaExamenesTest=(aciertos-puntosPerdidos)/3;
+				System.out.println("Tu nota en el examen es " + notaExamenesTest);
 	}
-        public void presentarTrabajos(){/*Para saber si has entregado todos los trabajos */
+	
+	
+        public void presentarTrabajos(int notaFinal){//Para saber si has entregado todos los trabajos.
             int trabajos = 0;
             System.out.println("Introduce tus trabajos entregados: ");
                      trabajos = stdin.nextInt();
-              if (!(trabajos>=3)){
-                  System.out.println("Lo has entregado todo");
-                  notaTrabajo=trabajos/3;
+			if (trabajos>=3){  //Calcula si lo has entragado todo.				   
+                  System.out.println("Lo has entregado todo.");
                   
-              } else {
-                  System.out.println("Has suspendido");
-                  notaTrabajo = 3;
+              } else { /*Si no has entragado todo te ponen la nota por defecto*/
+            	  notaFinal = 3;
+                  System.out.println("Has suspendido. Tu nota es de " + notaFinal);
+                  System.exit(0);
               }
-      }
+        }
+        
+        
+        public void retrasoTrabajos() {
+        	
+        }
+        
         public static void main(String[] args) {
-        // TODO code application logic here
-    }
+        
+			// TODO code application logic here
+        	System.out.println();
+        }
 
 }
-
