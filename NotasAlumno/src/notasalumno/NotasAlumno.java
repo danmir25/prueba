@@ -84,3 +84,51 @@ public class NotasAlumno {
         }
 
 }
+
+------------------------
+package notasAlumno;
+
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.TableColumn;
+import org.eclipse.swt.widgets.TableItem;
+
+public class InterfazNotasAlumno extends Composite {
+	private Table table;
+
+	/**
+	 * Create the composite.
+	 * @param parent
+	 * @param style
+	 */
+	public InterfazNotasAlumno(Composite parent, int style) {
+		super(parent, style);
+		
+		table = new Table(this, SWT.BORDER | SWT.FULL_SELECTION);
+		table.setBounds(77, 99, 340, 140);
+		table.setHeaderVisible(true);
+		table.setLinesVisible(true);
+		
+		TableItem tableItem_2 = new TableItem(table, SWT.NONE);
+		tableItem_2.setText("Nota 1");
+		
+		TableItem tableItem = new TableItem(table, SWT.NONE);
+		tableItem.setText("Nota 2");
+		
+		TableItem tableItem_1 = new TableItem(table, SWT.NONE);
+		tableItem_1.setText("Nota 3");
+		
+		TableItem tableItem_3 = new TableItem(table, SWT.NONE);
+		tableItem_3.setText("Nota 4");
+		
+		TableItem tableItem_4 = new TableItem(table, SWT.NONE);
+		tableItem_4.setText("Nota 5");
+		
+	}
+
+	@Override
+	protected void checkSubclass() {
+		// Disable the check that prevents subclassing of SWT components
+	}
+}
