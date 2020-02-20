@@ -1,27 +1,29 @@
 package notasalumno;
 /* Programa notas alumno
- * Version 1.4.2*/
+ * Version 1.5.1*/
 import java.util.Scanner;
 public class NotasAlumno {
 	Scanner stdin = new Scanner (System.in);
- 
+
+	private static int alumnos;
+	double notaFinal=0;
+	 int trabajos = 0;
 	class Alumno{
-		int alumno;
-		int notaFinal=0;
+		
 	}    
-        public void examenes(int notaFinal){ //Cada porcentaje de cada examen
+        public void instertarExamenes(){ //Cada porcentaje de cada examen
      
             System.out.println("Inserta la nota del primer examen: ");
-                    int examen1 =stdin.nextInt();
+                    double examen1 =stdin.nextInt();
             System.out.println("Inserta la nota del segundo examen: ");
-                    int examen2 =stdin.nextInt();
+                    double examen2 =stdin.nextInt();
              System.out.println("Inserta la nota del tercer examen: ");
-                    int examen3 =stdin.nextInt();
+                    double examen3 =stdin.nextInt();
              System.out.println("Inserta la nota del cuarto examen: ");
-                    int examen4 =stdin.nextInt();
+                    double examen4 =stdin.nextInt();
              System.out.println("Inserta la nota del quinto examen: ");
-                    int examen5 =stdin.nextInt();
-             notaFinal = (int) (examen1*0.1 + examen2*0.2 + examen3*0.2 + examen4*0.25 + examen5*025);
+                    double examen5 =stdin.nextInt();
+             notaFinal = (double) (examen1*0.1 + examen2*0.2 + examen3*0.2 + examen4*0.25 + examen5*025);
              System.out.println(notaFinal);
         }
         
@@ -30,7 +32,7 @@ public class NotasAlumno {
           int notaExamenesClasicos=0;
           	System.out.println("Introduce tu nota: ");
           		notaExamenesClasicos=stdin.nextInt();
-		  	if (notaExamenesClasicos<=10) {
+		  	if (notaExamenesClasicos>=0 && notaExamenesClasicos<=10) {
 		  		System.out.println("Tu nota es de " + notaExamenesClasicos);
 		  	}else {
 		  		System.out.println("Nota no valida");
@@ -58,8 +60,8 @@ public class NotasAlumno {
 	}
 	
 	
-        public void presentarTrabajos(int notaFinal){//Para saber si has entregado todos los trabajos.
-            int trabajos = 0;
+        public void presentarTrabajos(){//Para saber si has entregado todos los trabajos.
+          
             System.out.println("Introduce tus trabajos entregados: ");
                      trabajos = stdin.nextInt();
 			if (trabajos>=3){  //Calcula si lo has entragado todo.				   
@@ -73,17 +75,28 @@ public class NotasAlumno {
         }
         
         
-        public void retrasoTrabajos() {
-        	
+        public void retrasoTrabajos() { //Penalizacion si hay retraso en una entraga de un trabajo
+        	int dias=0;
+        	System.out.println("Insterta los dias de retraso: ");
+        		dias=stdin.nextInt();
+        	if(dias>5) {
+        		System.out.println("Trabajo no entregado");
+        	}else{
+        		notaFinal=notaFinal-(dias*0.1);
+        	}
         }
         
         public static void main(String[] args) {
         
 			// TODO code application logic here
-        	System.out.println();
-        }
+        	for(alumnos = 1; alumnos <= 10; alumnos++){
+        		
+        	}
 
+        }
 }
+
+
 
 ------------------------
 package notasAlumno;
@@ -132,3 +145,4 @@ public class InterfazNotasAlumno extends Composite {
 		// Disable the check that prevents subclassing of SWT components
 	}
 }
+
