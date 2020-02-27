@@ -1,6 +1,7 @@
 package notasalumno;
 /* Programa notas alumno
- * Version 2.0*/
+ * Version 2.1.1*/
+/*Programa para calcular la nota media de 10 alumnos*/
 import java.util.Scanner;
 public class NotasAlumno {
 	Scanner stdin = new Scanner (System.in);
@@ -14,25 +15,34 @@ public class NotasAlumno {
 		
 	}    
               
-	public void calcularExamenesClasicos() { // Aqui introduces las notas de los examenes clasicos
-       double notaExamenesClasicos=0; 
+	public float calcularExamenesClasicos() { // Aqui introduces las notas de los examenes clasicos
+       float notaExamenesClasicos; 
        int examenesClasicos;
        System.out.println("EXAMENES CLASICOS");
          for(examenesClasicos=1;examenesClasicos<=3;examenesClasicos++) {
-          	System.out.println("Introduce tu nota: ");
+          	System.out.println("Introduce tu nota " + examenesClasicos + ":" );
           		notaExamenesClasicos=stdin.nextInt();
+                        if(notaExamenesClasicos<0){
+                            System.out.println("Nota no valida");
+                                	System.exit(0);
+                        }
+                        if(notaExamenesClasicos>10){
+                            System.out.println("Nota no valida");
+		  		System.exit(0);
+                        }
 		  	if (notaExamenesClasicos>=0 && notaExamenesClasicos<=10) {
 		  		System.out.println("Tu nota es de " + notaExamenesClasicos);
-		  	}else {
-		  		System.out.println("Nota no valida");
-		  		return;
+
 		  	}
+                        sumaExamenesClasicos=sumaExamenesClasicos+notaExamenesClasicos;
+                        System.out.println("Suma total de tus examenes clasicos " + sumaExamenesClasicos);
          }      
+            return 0;
     }
 	
 	
 	public void calcularExamenesTest(){ // Aqui se calcula las notas de los examenes test.
-		int notaExamenesTest=0, aciertos=0, fallos=0, puntosPerdidos=0, examenesTest;
+		int notaExamenesTest, aciertos, fallos, puntosPerdidos=0, examenesTest;
 	    System.out.println("EXAMENES TIPO TEST");
 		for(examenesTest=1;examenesTest<=2;examenesTest++) {
 			System.out.println("Insterta tus aciertos: ");
@@ -41,16 +51,18 @@ public class NotasAlumno {
 				fallos=stdin.nextInt();
 			if(fallos > 0) {
 				puntosPerdidos = fallos/3;
-				System.out.println("Has tenido fallos. Pierdes " + puntosPerdidos);
+				System.out.println("Has tenido fallos. Pierdes " + puntosPerdidos + " puntos");
 			}else{
 				System.out.println("No has tenido fallos");
 			}
 				System.out.println();
 				notaExamenesTest=(aciertos-puntosPerdidos)/3;
 				System.out.println("Tu nota en el examen es " + notaExamenesTest);
-				
-		}
+                        sumaExamenesTest=sumaExamenesTest + notaExamenesTest;
+                        System.out.println("Suma total de tus examenes test " + sumaExamenesTest);
 	}
+		}
+                
 	
 	
         public void presentarTrabajos(){//Para saber si has entregado todos los trabajos.
@@ -69,13 +81,13 @@ public class NotasAlumno {
         
         
         public void retrasoTrabajos() { //Penalizacion si hay retraso en una entraga de un trabajo
-        	int dias=0;
+        	int dias;
         	System.out.println("Insterta los dias de retraso: ");
         		dias=stdin.nextInt();
         	if(dias>5) {
         		System.out.println("Trabajo no entregado");
         	}else{
-                //notaFinal = (double) (examen1*0.1 + examen2*0.2 + examen3*0.2 + examen4*0.25 + examen5*025)/5;
+                 notaFinal = (sumaExamenesClasicos/3)*0.5 + (sumaExamenesTest/2)*0.5; 
         		notaFinal=notaFinal-(dias*0.1);
         		System.out.println("La nota final del alumno " + alumnos + " es " + notaFinal);
         	}
@@ -84,6 +96,7 @@ public class NotasAlumno {
         public static void main(String[] args) {
 			// TODO code application logic here
         	NotasAlumno Alumno = new NotasAlumno();
+                System.out.println("¡Bienvenido!");
          	for(alumnos = 1; alumnos <= 10; alumnos++){
          		System.out.println("ALUMNO " + alumnos);
         		Alumno.calcularExamenesClasicos();
@@ -94,8 +107,6 @@ public class NotasAlumno {
 
         }
 }
-
-
 
 
 ------------------------
