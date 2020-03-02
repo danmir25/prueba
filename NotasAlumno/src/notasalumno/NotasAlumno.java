@@ -16,12 +16,12 @@ public class NotasAlumno {
 	}    
               
 	public float calcularExamenesClasicos() { // Aqui introduces las notas de los examenes clasicos
-       float notaExamenesClasicos; 
+       double notaExamenesClasicos; 
        int examenesClasicos;
        System.out.println("EXAMENES CLASICOS");
          for(examenesClasicos=1;examenesClasicos<=3;examenesClasicos++) {
           	System.out.println("Introduce tu nota " + examenesClasicos + ":" );
-          		notaExamenesClasicos=stdin.nextInt();
+          		notaExamenesClasicos=stdin.nextDouble();
                         if(notaExamenesClasicos<0){
                             System.out.println("Nota no valida");
                                 	System.exit(0);
