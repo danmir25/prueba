@@ -1,6 +1,6 @@
 package notasalumno;
 /* Programa notas alumno
- * Version 2.1.1*/
+ * Version 2.1.2*/
 /*Programa para calcular la nota media de 10 alumnos*/
 import java.util.Scanner;
 public class NotasAlumno {
@@ -24,11 +24,11 @@ public class NotasAlumno {
           		notaExamenesClasicos=stdin.nextDouble();
                         if(notaExamenesClasicos<0){
                             System.out.println("Nota no valida");
-                                	System.exit(0);
+                                calcularExamenesClasicos();
                         }
                         if(notaExamenesClasicos>10){
                             System.out.println("Nota no valida");
-		  		System.exit(0);
+		  		calcularExamenesClasicos();
                         }
 		  	if (notaExamenesClasicos>=0 && notaExamenesClasicos<=10) {
 		  		System.out.println("Tu nota es de " + notaExamenesClasicos);
