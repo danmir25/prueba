@@ -110,50 +110,254 @@ public class NotasAlumno {
 
 
 ------------------------
-package notasAlumno;
+package notasalumno;
 
-import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Table;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.widgets.TableColumn;
-import org.eclipse.swt.widgets.TableItem;
+import java.awt.EventQueue;
 
-public class InterfazNotasAlumno extends Composite {
-	private Table table;
+import javax.swing.JFrame;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JLabel;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JTextField;
+import javax.swing.JFormattedTextField;
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.JSeparator;
+public class NotasalumnoIn {
+
+	private JFrame frame;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
+	private JTextField textField_6;
+	private JTextField textField_7;
+	private JTextField textField_8;
 
 	/**
-	 * Create the composite.
-	 * @param parent
-	 * @param style
+	 * Launch the application.
 	 */
-	public InterfazNotasAlumno(Composite parent, int style) {
-		super(parent, style);
-		
-		table = new Table(this, SWT.BORDER | SWT.FULL_SELECTION);
-		table.setBounds(77, 99, 340, 140);
-		table.setHeaderVisible(true);
-		table.setLinesVisible(true);
-		
-		TableItem tableItem_2 = new TableItem(table, SWT.NONE);
-		tableItem_2.setText("Nota 1");
-		
-		TableItem tableItem = new TableItem(table, SWT.NONE);
-		tableItem.setText("Nota 2");
-		
-		TableItem tableItem_1 = new TableItem(table, SWT.NONE);
-		tableItem_1.setText("Nota 3");
-		
-		TableItem tableItem_3 = new TableItem(table, SWT.NONE);
-		tableItem_3.setText("Nota 4");
-		
-		TableItem tableItem_4 = new TableItem(table, SWT.NONE);
-		tableItem_4.setText("Nota 5");
-		
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					NotasalumnoIn window = new NotasalumnoIn();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 
-	@Override
-	protected void checkSubclass() {
-		// Disable the check that prevents subclassing of SWT components
+	/**
+	 * Create the application.
+	 */
+	public NotasalumnoIn() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().setFont(new Font("Dialog", Font.BOLD, 12));
+		frame.getContentPane().setBackground(Color.CYAN);
+		frame.setForeground(Color.WHITE);
+		frame.getContentPane().setForeground(Color.GRAY);
+		frame.setBounds(100, 100, 511, 531);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JLabel lblNewLabel = new JLabel("Bienvenido Alumno");
+		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 20));
+		
+		JLabel lblNewLabel_1 = new JLabel("Inserta tus notas correspondientes");
+		lblNewLabel_1.setFont(new Font("Dialog", Font.BOLD, 15));
+		lblNewLabel_1.setBackground(Color.GRAY);
+		
+		JLabel lblNewLabel_2 = new JLabel("Examenes Clasicos");
+		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD | Font.ITALIC, 15));
+		
+		JLabel lblNewLabel_3 = new JLabel("Examenes Test");
+		lblNewLabel_3.setFont(new Font("Dialog", Font.BOLD | Font.ITALIC, 15));
+		
+		JLabel lblNewLabel_4 = new JLabel("Trabajos");
+		lblNewLabel_4.setFont(new Font("Dialog", Font.BOLD | Font.ITALIC, 15));
+		
+		JLabel lblNewLabel_5 = new JLabel("Examen 1");
+		
+		JLabel lblNewLabel_5_1 = new JLabel("Examen 2");
+		
+		JLabel lblNewLabel_5_2 = new JLabel("Examen 3");
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		
+		JLabel lblNewLabel_5_3 = new JLabel("Examen 1 Test");
+		
+		JLabel lblNewLabel_5_4 = new JLabel("Examen 2 Test");
+		
+		JLabel lblNewLabel_6 = new JLabel("Aciertos");
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		
+		JLabel lblNewLabel_8 = new JLabel("Errores");
+		
+		textField_5 = new JTextField();
+		textField_5.setColumns(10);
+		
+		textField_6 = new JTextField();
+		textField_6.setColumns(10);
+		
+		JLabel lblNewLabel_7 = new JLabel("Trabajos entregados");
+		
+		textField_7 = new JTextField();
+		textField_7.setColumns(10);
+		
+		JSeparator separator = new JSeparator();
+		
+		JSeparator separator_1 = new JSeparator();
+		
+		JLabel lblNewLabel_9 = new JLabel("Dias de retraso");
+		
+		textField_8 = new JTextField();
+		textField_8.setColumns(10);
+		
+		JSeparator separator_2 = new JSeparator();
+		
+		JLabel lblNewLabel_10 = new JLabel("NOTA FINAL");
+		lblNewLabel_10.setFont(new Font("Dialog", Font.BOLD | Font.ITALIC, 18));
+		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+						.addComponent(lblNewLabel)
+						.addComponent(lblNewLabel_1)
+						.addComponent(lblNewLabel_2)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(lblNewLabel_5)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(lblNewLabel_5_1, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(lblNewLabel_5_2, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(lblNewLabel_3, GroupLayout.PREFERRED_SIZE, 115, GroupLayout.PREFERRED_SIZE)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
+								.addComponent(lblNewLabel_5_4, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(lblNewLabel_5_3, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE))
+							.addGap(18)
+							.addComponent(lblNewLabel_6)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
+								.addComponent(textField_4, 0, 0, Short.MAX_VALUE)
+								.addComponent(textField_3, GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(lblNewLabel_8)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
+								.addComponent(textField_6, 0, 0, Short.MAX_VALUE)
+								.addComponent(textField_5, GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(lblNewLabel_9)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(textField_8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(separator, GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
+						.addComponent(lblNewLabel_4)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(lblNewLabel_7)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(textField_7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(lblNewLabel_10)
+						.addComponent(separator_1)
+						.addComponent(separator_2))
+					.addContainerGap(83, Short.MAX_VALUE))
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lblNewLabel)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblNewLabel_1)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblNewLabel_2)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblNewLabel_5)
+						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblNewLabel_5_1)
+						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(8)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblNewLabel_5_2)
+						.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(separator, GroupLayout.PREFERRED_SIZE, 1, GroupLayout.PREFERRED_SIZE)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addGap(11)
+									.addComponent(lblNewLabel_3)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(lblNewLabel_5_3)
+										.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+										.addComponent(textField_5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(lblNewLabel_5_4)
+										.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+										.addComponent(textField_6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+								.addGroup(groupLayout.createSequentialGroup()
+									.addGap(52)
+									.addComponent(lblNewLabel_6))))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(51)
+							.addComponent(lblNewLabel_8)))
+					.addGap(18)
+					.addComponent(separator_1, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblNewLabel_4, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblNewLabel_7)
+						.addComponent(textField_7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblNewLabel_9)
+						.addComponent(textField_8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(18)
+					.addComponent(separator_2, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblNewLabel_10)
+					.addGap(66))
+		);
+		frame.getContentPane().setLayout(groupLayout);
 	}
 }
-
