@@ -1,6 +1,6 @@
 package notasalumno;
 /* Programa notas alumno
- * Version 2.3*/
+ * Version 2.3.1*/
 /*Programa para calcular la nota media de 10 alumnos*/
 import java.util.Scanner;
 public class NotasAlumno {
@@ -46,7 +46,8 @@ public class NotasAlumno {
 	
 	
 	public float calcularExamenesTest(){ // Aqui se calcula las notas de los examenes test.
-		int notaExamenesTest, aciertos, fallos, puntosPerdidos=0, examenesTest, pregRestantes;
+		double notaExamenesTest, puntosPerdidos=0;
+		int aciertos, fallos, examenesTest, pregRestantes;
 	    System.out.println("EXAMENES TIPO TEST");
 		for(examenesTest=1;examenesTest<=2;examenesTest++) {
 			System.out.println("EXAMEN TIPO TEST " + examenesTest);
