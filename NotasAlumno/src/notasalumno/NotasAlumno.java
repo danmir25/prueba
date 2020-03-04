@@ -146,23 +146,16 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTextField;
-import javax.swing.JFormattedTextField;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JSeparator;
 public class NotasalumnoIn {
 
-	private JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-
+	JFrame frame;
+	/**
+	 * 
+	 */
+	private JTextField textField,textField_1,textField_2,textField_3,textField_4,textField_5,textField_6,textField_7,textField_8,textField_9;
 	/**
 	 * Launch the application.
 	 */
@@ -185,7 +178,6 @@ public class NotasalumnoIn {
 	public NotasalumnoIn() {
 		initialize();
 	}
-
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -198,7 +190,7 @@ public class NotasalumnoIn {
 		frame.setBounds(100, 100, 511, 531);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		JLabel lblNewLabel = new JLabel("Bienvenido Alumno");
+		JLabel lblNewLabel = new JLabel("Bienvenido Alumno");//Comienzo de la interfaz grafica visible//
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 20));
 		
 		JLabel lblNewLabel_1 = new JLabel("Inserta tus notas correspondientes");
@@ -220,13 +212,13 @@ public class NotasalumnoIn {
 		
 		JLabel lblNewLabel_5_2 = new JLabel("Examen 3");
 		
-		textField = new JTextField();
+		textField = new JTextField();//empiezan los text field//
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
 		
-		textField_2 = new JTextField();
+		textField_2 =new JTextField();
 		textField_2.setColumns(10);
 		
 		JLabel lblNewLabel_5_3 = new JLabel("Examen 1 Test");
@@ -267,58 +259,63 @@ public class NotasalumnoIn {
 		
 		JLabel lblNewLabel_10 = new JLabel("NOTA FINAL");
 		lblNewLabel_10.setFont(new Font("Dialog", Font.BOLD | Font.ITALIC, 18));
-		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
+		
+		textField_9 = new JTextField();//textfile Nota Final//
+		textField_9.setEditable(false);
+		textField_9.setColumns(10);
+		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());//comienza las caracteristicas de el layaout//
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-						.addComponent(lblNewLabel)
-						.addComponent(lblNewLabel_1)
-						.addComponent(lblNewLabel_2)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(lblNewLabel_5)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(lblNewLabel_5_1, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(lblNewLabel_5_2, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addComponent(lblNewLabel_3, GroupLayout.PREFERRED_SIZE, 115, GroupLayout.PREFERRED_SIZE)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
-								.addComponent(lblNewLabel_5_4, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(lblNewLabel_5_3, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE))
-							.addGap(18)
-							.addComponent(lblNewLabel_6)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
-								.addComponent(textField_4, 0, 0, Short.MAX_VALUE)
-								.addComponent(textField_3, GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(lblNewLabel_8)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
-								.addComponent(textField_6, 0, 0, Short.MAX_VALUE)
-								.addComponent(textField_5, GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(lblNewLabel_9)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(textField_8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addComponent(separator, GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
-						.addComponent(lblNewLabel_4)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(lblNewLabel_7)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(textField_7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addComponent(lblNewLabel_10)
-						.addComponent(separator_1)
-						.addComponent(separator_2))
-					.addContainerGap(83, Short.MAX_VALUE))
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+							.addComponent(lblNewLabel)
+							.addComponent(lblNewLabel_1)
+							.addComponent(lblNewLabel_2)
+							.addGroup(groupLayout.createSequentialGroup()
+								.addComponent(lblNewLabel_5)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGroup(groupLayout.createSequentialGroup()
+								.addComponent(lblNewLabel_5_1, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGroup(groupLayout.createSequentialGroup()
+								.addComponent(lblNewLabel_5_2, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addComponent(lblNewLabel_3, GroupLayout.PREFERRED_SIZE, 115, GroupLayout.PREFERRED_SIZE)
+							.addGroup(groupLayout.createSequentialGroup()
+								.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
+									.addComponent(lblNewLabel_5_4, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(lblNewLabel_5_3, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE))
+								.addGap(18)
+								.addComponent(lblNewLabel_6)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
+									.addComponent(textField_4, 0, 0, Short.MAX_VALUE)
+									.addComponent(textField_3, GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addComponent(lblNewLabel_8)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
+									.addComponent(textField_6, 0, 0, Short.MAX_VALUE)
+									.addComponent(textField_5, GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)))
+							.addGroup(groupLayout.createSequentialGroup()
+								.addComponent(lblNewLabel_9)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(textField_8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addComponent(separator, GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
+							.addComponent(lblNewLabel_4)
+							.addGroup(groupLayout.createSequentialGroup()
+								.addComponent(lblNewLabel_7)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(textField_7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addComponent(lblNewLabel_10)
+							.addComponent(separator_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addComponent(separator_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(textField_9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
@@ -382,7 +379,9 @@ public class NotasalumnoIn {
 					.addComponent(separator_2, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(lblNewLabel_10)
-					.addGap(66))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(textField_9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(40))
 		);
 		frame.getContentPane().setLayout(groupLayout);
 	}
