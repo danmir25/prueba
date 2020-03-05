@@ -1,4 +1,4 @@
 Entrar en NotasAlumno/
 Entrar en src/
 Y entrar en notasalumno/
-JavaDoc esta junto a src en la carpeta DOC
+JavaDoc esta en src junto a notasalumno, en la carpeta DOC
